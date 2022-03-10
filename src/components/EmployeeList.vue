@@ -8,11 +8,10 @@
       v-bind:style="{ background: index % 2 == 0 ? 'white' : 'aliceblue' }"
     >
       <v-col> <name-field :name="employee.name" /> </v-col>
-      <v-col> <department-field :department="employee.department" /> </v-col>
-      <v-col> <job-title-field :jobTitle="employee.jobTitle" /> </v-col>
+      <v-col> <team-field :team="employee.team" /> </v-col>
+      <v-col> <project-field :project="employee.projects" /> </v-col>
       <v-col> <sex-field :sex="employee.sex" /> </v-col>
-      <v-col> <evaluate-field :evaluate="employee.evaluate" /> </v-col>
-      <v-col> <ability-field :ability="employee.ability" /> </v-col>
+      <v-col> <introduce-field :introduce="employee.introduce" /> </v-col>
       <v-col>
         <div>
           <v-btn
@@ -20,7 +19,9 @@
             @click="updateEmployeeData(employee.employeeId)"
             >UPDATE</v-btn
           >
-          <v-btn color="error" @click="deleteEmployeeData(employee.employeeId)">DELETE</v-btn>
+          <v-btn color="error" @click="deleteEmployeeData(employee.employeeId)"
+            >DELETE</v-btn
+          >
         </div>
       </v-col>
     </v-row>
@@ -32,10 +33,9 @@ import EmployeeListTitle from "@/components/EmployeeListTitle.vue";
 import Employees from "@/assets/employees";
 
 import {
-  AbilityField,
-  DepartmentField,
-  EvaluateField,
-  JobTitleField,
+  TeamField,
+  IntroduceField,
+  ProjectField,
   NameField,
   SexField,
 } from "./EmployeeField.vue";
@@ -44,16 +44,15 @@ export default {
   data: () => ({ Employees }),
   components: {
     EmployeeListTitle,
-    AbilityField,
-    DepartmentField,
-    EvaluateField,
-    JobTitleField,
+    TeamField,
+    IntroduceField,
+    ProjectField,
     NameField,
     SexField,
   },
   computed: {
     getEmployees() {
-      console.log(this.Employees)
+      console.log(this.Employees);
       return this.Employees;
     },
   },
@@ -67,13 +66,13 @@ export default {
         (employee) => employee.employeeId === employeeId
       );
       console.log(employee_Index);
-      console.log(Employees,employee_Index);
+      console.log(Employees, employee_Index);
       Employees.splice(employee_Index, 1);
       // localStorage.setItem("employees", JSON.stringify(Employees));
     },
   },
-  updated(){
-    console.log("up")
-  }
+  updated() {
+    console.log("up");
+  },
 };
 </script>

@@ -10,7 +10,7 @@
 export default {
   name: "EmployeeListTitle",
   data: () => ({
-    titles: ["姓名", "部門", "職位", "性別", "評價", "能力", "動作"],
+    titles: ["姓名", "團隊", "專案", "性別", "自我介紹", "動作"],
   }),
 };
 </script>

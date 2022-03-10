@@ -1,21 +1,19 @@
 const EMPLOYEES_DEFAULT = [{
     "employeeId": "TP0122",
     "name": "henry",
-    "department": "TWGS",
-    "jobTitle": "Intern",
+    "team": "Mahjong",
     "sex": "male",
-    "evaluate": "nice",
-    "ability": 8
+    "projects": ["To-Do List"],
+    "introduce": "nice",
 }, {
     "employeeId": "TP0199",
     "name": "maggie",
-    "department": "ODTW",
-    "jobTitle": "HR",
+    "team": "Mahjong",
     "sex": "female",
-    "evaluate": "beauty",
-    "ability": 10
+    "projects": [],
+    "introduce": "beauty",
 }];
 
-const EMPLOYEES = localStorage.getItem("employees")!==null ?JSON.parse(localStorage.getItem("employees")): EMPLOYEES_DEFAULT;
+const EMPLOYEES = localStorage.getItem("employees") !== null ? JSON.parse(localStorage.getItem("employees")) : EMPLOYEES_DEFAULT;
 
 export default EMPLOYEES;
